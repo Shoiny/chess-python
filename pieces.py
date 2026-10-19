@@ -92,7 +92,7 @@ class pawn(piece):
                 self.previousPiece = func_piece_dict[func_board[pos[0]][pos[1]-self.dir]]
                 func_board[pos[0]][pos[1]-self.dir] = "0"
 
-        if pos[1] - self.position[1] == 2:
+        if abs(pos[1] - self.position[1]) == 2:
             self.allowEnPassant = True
 
         super().move(pos, func_board, func_piece_dict)
