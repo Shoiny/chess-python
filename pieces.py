@@ -86,14 +86,15 @@ class pawn(piece):
             self.doneEnPassant = False
             self.previousPiece = "0"
 
-        if pos[1] - self.position[1] == self.dir:
-            if abs(pos[0] - self.position[0]) == 1 and func_board[pos[0]][pos[1]] == "0":
-                self.doneEnPassant = True
-                self.previousPiece = func_piece_dict[func_board[pos[0]][pos[1]-self.dir]]
-                func_board[pos[0]][pos[1]-self.dir] = "0"
+        if not simulate:
+            if pos[1] - self.position[1] == self.dir:
+                if abs(pos[0] - self.position[0]) == 1 and func_board[pos[0]][pos[1]] == "0":
+                    self.doneEnPassant = True
+                    self.previousPiece = func_piece_dict[func_board[pos[0]][pos[1]-self.dir]]
+                    func_board[pos[0]][pos[1]-self.dir] = "0"
 
-        if abs(pos[1] - self.position[1]) == 2:
-            self.allowEnPassant = True
+            if abs(pos[1] - self.position[1]) == 2:
+                self.allowEnPassant = True
 
         super().move(pos, func_board, func_piece_dict)
 
