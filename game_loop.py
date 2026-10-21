@@ -2,20 +2,19 @@ import pygame,sys,time, os
 from functions import *
 
 ### loading sprites
-path = os.getcwd()
-path = path + "\\sprites"
-king_black = pygame.image.load(path + "\\king_black.png")
-king_white = pygame.image.load(path + "\\king_white.png")
-queen_black = pygame.image.load(path + "\\queen_black.png")
-queen_white = pygame.image.load(path + "\\queen_white.png")
-rook_black = pygame.image.load(path + "\\rook_black.png")
-rook_white = pygame.image.load(path + "\\rook_white.png")
-bishop_black = pygame.image.load(path + "\\bishop_black.png")
-bishop_white = pygame.image.load(path + "\\bishop_white.png")
-knight_black = pygame.image.load(path + "\\knight_black.png")
-knight_white = pygame.image.load(path + "\\knight_white.png")
-pawn_black = pygame.image.load(path + "\\pawn_black.png")
-pawn_white = pygame.image.load(path + "\\pawn_white.png")
+path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sprites")
+king_black = pygame.image.load(os.path.join(path, "king_black.png"))
+king_white = pygame.image.load(os.path.join(path, "king_white.png"))
+queen_black = pygame.image.load(os.path.join(path, "queen_black.png"))
+queen_white = pygame.image.load(os.path.join(path, "queen_white.png"))
+rook_black = pygame.image.load(os.path.join(path, "rook_black.png"))
+rook_white = pygame.image.load(os.path.join(path, "rook_white.png"))
+bishop_black = pygame.image.load(os.path.join(path, "bishop_black.png"))
+bishop_white = pygame.image.load(os.path.join(path, "bishop_white.png"))
+knight_black = pygame.image.load(os.path.join(path, "knight_black.png"))
+knight_white = pygame.image.load(os.path.join(path, "knight_white.png"))
+pawn_black = pygame.image.load(os.path.join(path, "pawn_black.png"))
+pawn_white = pygame.image.load(os.path.join(path, "pawn_white.png"))
 
 sprite_dict = {
     "k":  [king_black, king_white],
