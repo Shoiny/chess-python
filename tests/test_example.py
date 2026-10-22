@@ -3,10 +3,13 @@
 #
 # pytest finds files named test_*.py and runs every function named test_*.
 # Each test uses "assert": if the condition is False, the test fails (red).
+#
+# EXERCISE: one test fails on purpose. Read pytest's message, find out why,
+# and fix the code so all tests pass. Fix the code, not the test!
 
 
 def double(n):
-    return n * 2
+    return abs(n) * 2
 
 
 def test_double_positive_number():
