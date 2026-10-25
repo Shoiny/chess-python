@@ -59,7 +59,7 @@ def promote(color):
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:  # Left click
                 mouse_pos = pygame.mouse.get_pos()
                 for i in range(4):
-                    if int((2 * i + 1) * width / 8 - width / 16) <= mouse_pos[0] <= int((2 * i + 1) * width / 8 + width / 16) and int(height / 2 - height / 16) <= mouse_pos[1] <= int(height / 2 + height / 8):
+                    if int((2 * i + 1) * width / 8 - width / 16) <= mouse_pos[0] <= int((2 * i + 1) * width / 8 + width / 16) and int(height / 2 - height / 16) <= mouse_pos[1] <= int(height / 2 + height / 16):
                         return i
 
 ### PYGAME LOOP ###
