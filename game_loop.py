@@ -127,21 +127,22 @@ def game_loop(func_board, func_piece_dict):
                         possibleMoves = selectedPiece.possiblePositions(func_board, func_piece_dict)
 
         ### Draw Screen ###
-        for indexX, x in enumerate(func_board):
-            for indexY, y in enumerate(x):
-                if((indexY + indexX)%2 == 0):
-                    pygame.draw.rect(screen, whitecolor, (indexX*(width/8), indexY*(height/8), (indexX+1)*(width/8), (indexY+1)*(height/8)))
-                else:
-                    pygame.draw.rect(screen, darkcolor, (indexX * (width / 8), indexY * (height / 8), (indexX + 1) * (width / 8), (indexY + 1) * (height / 8)))
-
-                if y != "0":
-                    screen.blit(sprite_dict[func_piece_dict[y].type][func_piece_dict[y].color], ((indexX*(width/8) + width/32, indexY*(height/8) + height/32)))
-
-        if piece_selected:
-            for move in possibleMoves:
-                circlePos = get_pos_on_screen(move, height, width)
-                pygame.draw.circle(screen, (0,255,0), (int(circlePos[0]+width/16), int(circlePos[1]+height/16)), 15)
-
         if updateScreen:
+            for indexX, x in enumerate(func_board):
+                for indexY, y in enumerate(x):
+                    if((indexY + indexX)%2 == 0):
+                        pygame.draw.rect(screen, whitecolor, (indexX*(width/8), indexY*(height/8), (indexX+1)*(width/8), (indexY+1)*(height/8)))
+                    else:
+                        pygame.draw.rect(screen, darkcolor, (indexX * (width / 8), indexY * (height / 8), (indexX + 1) * (width / 8), (indexY + 1) * (height / 8)))
+
+                    if y != "0":
+                        screen.blit(sprite_dict[func_piece_dict[y].type][func_piece_dict[y].color], ((indexX*(width/8) + width/32, indexY*(height/8) + height/32)))
+
+            if piece_selected:
+                for move in possibleMoves:
+                    circlePos = get_pos_on_screen(move, height, width)
+                    pygame.draw.circle(screen, (0,255,0), (int(circlePos[0]+width/16), int(circlePos[1]+height/16)), 15)
+
+
             pygame.display.update()
             updateScreen = False

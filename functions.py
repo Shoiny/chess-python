@@ -8,7 +8,7 @@ def get_pos_on_board(position, height, width):
 
 def get_pos_on_screen(position, height, width):
     x = int(position[0] * (width/8))
-    y = int(position[1] * (width/8))
+    y = int(position[1] * (height/8))
 
     return (x,y)
 
