@@ -246,8 +246,9 @@ class king(piece):
                         for x in range(1, abs(rookPosX - self.position[0])+1):
                             posX = self.position[0] + direction*x
 
-                            if [posX, self.position[1]] in enemyList[1]:
-                                allowCastle = False
+                            if x <=2:
+                                if [posX, self.position[1]] in enemyList[1]:
+                                    allowCastle = False
 
                             if func_board[posX][self.position[1]] != "0":
                                 if func_board[posX][self.position[1]] != rook.name or posX != rookPosX:
