@@ -265,7 +265,7 @@ class king(piece):
             if abs(pos[0] - self.position[0]) == 2:
                 direction = int(math.copysign(1, (pos[0] - self.position[0])))
                 for rook in self.rooks:
-                    if (rook.position[0] - self.position[0]) * direction >0:
+                    if (rook.position[0] - self.position[0]) * direction >0 and rook.hasMoved == False:
                         rook.move([self.position[0] + direction, self.position[1]], func_board,func_piece_dict, False)
 
         super().move(pos, func_board, func_piece_dict)
